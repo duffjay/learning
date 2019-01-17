@@ -93,6 +93,52 @@
                 "isDefault": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "tables",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-g",
+                "GTK/tables.c",
+                "-o",
+                "bin/tables",
+                "`pkg-config",
+                "--cflags",
+                "gtk+-2.0`",
+                "`pkg-config",
+                "--libs",
+                "gtk+-2.0`"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "togglebuttons",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-g",
+                "GTK/togglebuttons.c",
+                "-o",
+                "bin/togglebuttons",
+                "`pkg-config",
+                "--cflags",
+                "gtk+-2.0`",
+                "`pkg-config",
+                "--libs",
+                "gtk+-2.0`"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
         }
     ]
 }
