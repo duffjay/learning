@@ -24,6 +24,75 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "buttons",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-g",
+                "GTK/buttons.c",
+                "-o",
+                "bin/buttons",
+                "`pkg-config",
+                "--cflags",
+                "gtk+-2.0`",
+                "`pkg-config",
+                "--libs",
+                "gtk+-2.0`"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "boxes",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-g",
+                "GTK/boxes.c",
+                "-o",
+                "bin/boxes",
+                "`pkg-config",
+                "--cflags",
+                "gtk+-2.0`",
+                "`pkg-config",
+                "--libs",
+                "gtk+-2.0`"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "panes",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-g",
+                "GTK/panes.c",
+                "-o",
+                "bin/panes",
+                "`pkg-config",
+                "--cflags",
+                "gtk+-2.0`",
+                "`pkg-config",
+                "--libs",
+                "gtk+-2.0`"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
         }
     ]
 }
