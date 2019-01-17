@@ -1,2 +1,12 @@
 bin/*
 bin/*.*
+bin/
+
+#ecliplse
+Release/
+.ptp-sync-folder
+.project
+.ptp-sync
+.settings
+.README.md.html
+.cproject
