@@ -12,6 +12,8 @@ LDFLAGS= $(shell pkg-config --libs gtk+-2.0)
 # -- GST gstreamer
 gstCFLAGS=-g -Wall -Wextra $(shell pkg-config --cflags gstreamer-1.0)
 gstLDFLAGS=$(shell pkg-config --libs gstreamer-1.0)
+gst5CFLAGS=$(shell pkg-config --cflags gstreamer-video-1.0 gtk+-3.0 gstreamer-1.0)
+gst5LDFLAGS=$(shell pkg-config --libs  gstreamer-video-1.0 gtk+-3.0 gstreamer-1.0)
 
 
 gtkDIR=GTK/
@@ -42,7 +44,7 @@ GTK/buttons:  GTK/buttons.o
 	$(CC) -o bin/buttons GTK/buttons.o $(CFLAGS) $(LDFLAGS)
 
 # --- G S t r e a m e r ---
-allGST:  basic-tutorial-1 basic-tutorial-2
+allGST:  basic-tutorial-1 basic-tutorial-2 basic-tutorial-5
 
 #use a generic %.o: rule 
 #didn't work
@@ -52,7 +54,10 @@ basic-tutorial-1: gstreamer/basic-tutorial-1.c
 
 basic-tutorial-2: gstreamer/basic-tutorial-2.c
 	gcc -o bin/basic-tutorial-2 gstreamer/basic-tutorial-2.c $(gstCFLAGS) $(gstLDFLAGS)
-	
+
+# throws a deprecated warning
+basic-tutorial-5: gstreamer/basic-tutorial-5.c
+	$(CC) -o bin/basic-tutorial-5 gstreamer/basic-tutorial-5.c $(gst5CFLAGS) $(gst5LDFLAGS)
 		
 clean:
 	rm -f $(gtkDIR)*.o
